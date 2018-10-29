@@ -14,7 +14,7 @@
 # Install
 
 ```bash
-npm i -S vaxios-plugin-plugin
+npm i -S vaxios-plugin
 ```
 
 # Used
@@ -23,9 +23,9 @@ npm i -S vaxios-plugin-plugin
 
 ```bash
 import Vue from 'vue'
-import vaxios-plugin from 'vaxios-plugin-plugin'
+import Vaxios from 'vaxios-plugin'
 
-Vue.use(vaxios-plugin, {
+Vue.use(Vaxios, {
   useparam: true,
   param: {
     baseURL: 'https://cnodejs.org/api/v1',
