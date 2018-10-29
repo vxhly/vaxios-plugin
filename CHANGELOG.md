@@ -1,0 +1,18 @@
+<a name="0.1.0"></a>
+# 0.1.0 (2018-10-29)
+
+
+### Bug Fixes
+
+* **src/v-axios:** 修复路径错误 ([0080a07](https://github.com/vxhly/v-axios/commit/0080a07))
+
+
+### Features
+
+* **lib/axios:** 默认的 axios 拦截器 ([23fb940](https://github.com/vxhly/v-axios/commit/23fb940))
+* **src lib:** 目录结构 ([15261b6](https://github.com/vxhly/v-axios/commit/15261b6))
+* **src/v-axios.js:** 引入默认配置,以及其他的一些配置参数 ([9989443](https://github.com/vxhly/v-axios/commit/9989443))
+* **src/v-axios.js:** 添加全局的 this.$GET,this.$POST,this.$PUT,this.$PATCH,this.$DELETE 方法 ([ce01deb](https://github.com/vxhly/v-axios/commit/ce01deb))
+
+
+
