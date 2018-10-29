@@ -1,8 +1,8 @@
 {
-  "name": "v-axios",
+  "name": "vaxios-plugin",
   "version": "0.1.1",
   "description": "二次封装 axios,使 vue.js 中使用 axios 变得更加简单",
-  "main": "src/v-axios.js",
+  "main": "src/vaxios-plugin.js",
   "script": {
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
@@ -15,9 +15,9 @@
   "author": "vxhly <pengchengou@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vxhly/v-axios/issues"
+    "url": "https://github.com/vxhly/vaxios-plugin/issues"
   },
-  "homepage": "https://github.com/vxhly/v-axios#readme",
+  "homepage": "https://github.com/vxhly/vaxios-plugin#readme",
   "devDependencies": {
     "cz-conventional-changelog": "^2.1.0"
   },

@@ -1,6 +1,6 @@
-# Vaxios
+# vaxios-plugin
 
-[![NPM version](https://img.shields.io/npm/v/Vaxios.svg?style=flat-square)](https://www.npmjs.com/package/Vaxios) [![GitHub forks](https://img.shields.io/github/forks/vxhly/Vaxios.svg)](https://github.com/vxhly/Vaxios/network) [![GitHub stars](https://img.shields.io/github/stars/vxhly/Vaxios.svg)](https://github.com/vxhly/Vaxios/stargazers) [![NPM download](https://img.shields.io/npm/dm/Vaxios.svg?style=flat-square)](https://npmjs.org/package/Vaxios) [![GitHub license](https://img.shields.io/github/license/vxhly/Vaxios.svg)](https://github.com/vxhly/Vaxios/blob/master/LICENSE)
+[![NPM version](https://img.shields.io/npm/v/vaxios-plugin.svg?style=flat-square)](https://www.npmjs.com/package/vaxios-plugin) [![GitHub forks](https://img.shields.io/github/forks/vxhly/vaxios-plugin.svg)](https://github.com/vxhly/vaxios-plugin/network) [![GitHub stars](https://img.shields.io/github/stars/vxhly/vaxios-plugin.svg)](https://github.com/vxhly/vaxios-plugin/stargazers) [![NPM download](https://img.shields.io/npm/dm/vaxios-plugin.svg?style=flat-square)](https://npmjs.org/package/vaxios-plugin) [![GitHub license](https://img.shields.io/github/license/vxhly/vaxios-plugin.svg)](https://github.com/vxhly/vaxios-plugin/blob/master/LICENSE)
 
 > 二次封装 axios,使 vue.js 中使用 axios 变得更加简单
 
@@ -14,7 +14,7 @@
 # Install
 
 ```bash
-npm i -S Vaxios
+npm i -S vaxios-plugin-plugin
 ```
 
 # Used
@@ -23,9 +23,9 @@ npm i -S Vaxios
 
 ```bash
 import Vue from 'vue'
-import Vaxios from 'Vaxios'
+import vaxios-plugin from 'vaxios-plugin-plugin'
 
-Vue.use(Vaxios, {
+Vue.use(vaxios-plugin, {
   useparam: true,
   param: {
     baseURL: 'https://cnodejs.org/api/v1',
