@@ -33,6 +33,156 @@ Vaxios.install = function (Vue, options) {
     $axios = axiosDefault(opt.param.baseURL, opt.param.timeout)
   }
 
+  /**
+   * [$GET 全局的 GET 方法]
+   *
+   * @method $GET
+   * @param  {String} url
+   * @return {Array | Object}
+   */
+
+  Vue.prototype.$GET = async (url) => {
+    try {
+      const response = await $axios.get(`${url}`)
+
+      console.log($axios)
+
+      if (opt.debug && opt.debug.get_debug) {
+        console.info(response.data || null)
+      }
+
+      return response.data
+    } catch (err) {
+      if (err.response) {
+        if (opt.throwError) throw Error(err.response.data.message)
+        if (opt.debug && opt.debug.get_debug) {
+          console.info(err.data || null)
+        }
+      }
+      throw err
+    }
+  }
+
+  /**
+   * [$POST 全局的 POST 方法]
+   *
+   * @method $POST
+   * @param  {String} url
+   * @param  {Array | Object} payload =>Required:true
+   * @return {Array | Object}
+   */
+
+  Vue.prototype.$POST = async (url, payload) => {
+    try {
+      if (Array.isArray(payload) || typeof payload === 'object') {
+        const response = await $axios.post(`${url}`, payload)
+
+        if (opt.debug && opt.debug.post_debug) console.info(response.data || null)
+
+        return response.data
+      } else throw Error('payload must be Array or Object')
+    } catch (err) {
+      if (err.response) {
+        if (opt.throwError) throw Error(err.response.data.message)
+        if (opt.debug && opt.debug.post_debug) console.error(err.response || null)
+      }
+      throw err
+    }
+  }
+
+
+  /**
+   * [$PUT 全局的 PUT 方法]
+   *
+   * @method $PUT
+   * @param  {String} url
+   * @param  {Array | Object} payload =>Required:true
+   * @return {Array | Object}
+   */
+
+  Vue.prototype.$PUT = async (url, payload) => {
+    try {
+      if (Array.isArray(payload) || typeof payload === 'object') {
+        const response = await $axios.put(`${url}`, payload)
+
+        if (opt.debug && opt.debug.put_debug) console.info(response.data || null)
+
+        return response.data
+      } else throw Error('payload must be Array or Object')
+    } catch (err) {
+      if (err.response) {
+        if (opt.throwError) throw Error(err.response.data.message)
+        if (opt.debug && opt.debug.put_debug) {
+          console.info(err.data || null)
+        }
+      }
+      throw err
+    }
+  }
+
+  /**
+   * [$PATCH 全局的 PATCH 方法]
+   *
+   * @method $PATCH
+   * @param  {String} url
+   * @param  {Array | Object} payload =>Required:true
+   * @return {Array | Object}
+   */
+
+  Vue.prototype.$PATCH = async (url, payload) => {
+    try {
+      if (Array.isArray(payload) || typeof payload === 'object') {
+        const response = await $axios.patch(`${url}`)
+
+        if (opt.debug && opt.debug.patch_debug) console.info(response.data || null)
+
+        return response.data
+      } else throw Error('payload must be Array or Object')
+    } catch (err) {
+      if (err.response) {
+        if (opt.throwError) throw Error(err.response.data.message)
+        if (opt.debug && opt.debug.patch_debug) {
+          console.info(err.data || null)
+        }
+      }
+      throw err
+    }
+  }
+
+  /**
+   * [$DELETE 全局的 DELETE 方法]
+   *
+   * @method $DELETE
+   * @param  {String} url
+   * @param  {Array | Object} payload =>Required:false
+   * @return {Array | Object}
+   */
+
+  Vue.prototype.$DELETE = async (url, payload) => {
+    try {
+      let response = null
+      if (payload) {
+        if (Array.isArray(payload) || typeof payload === 'object') {
+          response = await $axios.delete(`${url}`, {
+            data: payload
+          })
+        } else throw Error('payload must be Array')
+      } else response = await $axios.delete(`${url}`)
+
+      if (opt.debug && opt.debug.delete_debug) console.info(response.data || null)
+
+      return response.data
+    } catch (err) {
+      if (err.response) {
+        if (opt.throwError) throw Error(err.response.data.message)
+        if (opt.debug && opt.debug.patch_debug) {
+          console.info(err.data || null)
+        }
+      }
+      throw err
+    }
+  }
+
 }
 
 export default Vaxios
