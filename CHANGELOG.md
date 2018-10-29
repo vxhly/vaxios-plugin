@@ -1,10 +1,12 @@
-<a name="0.1.1"></a>
-## [0.1.1](https://github.com/vxhly/vaxios-plugin/compare/15261b6...v0.1.1) (2018-10-29)
+<a name="0.1.2"></a>
+## [0.1.2](https://github.com/vxhly/vaxios-plugin/compare/15261b6...v0.1.2) (2018-10-29)
 
 
 ### Bug Fixes
 
 * **src/v-axios:** 修复路径错误 ([0080a07](https://github.com/vxhly/vaxios-plugin/commit/0080a07))
+* **src/vaxios-plugin:** 修改文件名 => vaxios-plugin ([590c5f5](https://github.com/vxhly/vaxios-plugin/commit/590c5f5))
+* 删除不必要文件 ([b9fc2c3](https://github.com/vxhly/vaxios-plugin/commit/b9fc2c3))
 
 
 ### Features
