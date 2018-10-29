@@ -1,6 +1,6 @@
 {
   "name": "v-axios",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "二次封装 axios,使 vue.js 中使用 axios 变得更加简单",
   "main": "src/v-axios.js",
   "script": {
