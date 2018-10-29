@@ -1,6 +1,6 @@
 import {
   axiosDefault
-} from './lib/axios'
+} from '../lib/axios'
 const Vaxios = []
 
 Vaxios.install = function (Vue, options) {
@@ -89,7 +89,6 @@ Vaxios.install = function (Vue, options) {
       throw err
     }
   }
-
 
   /**
    * [$PUT 全局的 PUT 方法]
@@ -182,7 +181,6 @@ Vaxios.install = function (Vue, options) {
       throw err
     }
   }
-
 }
 
 export default Vaxios
