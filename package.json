@@ -1,0 +1,32 @@
+{
+  "name": "v-axios",
+  "version": "0.1.0",
+  "description": "二次封装 axios,使 vue.js 中使用 axios 变得更加简单",
+  "main": "src/v-axios.js",
+  "script": {
+    "changelog": "conventional-changelog -p angular -i src/CHANGELOG.md -s -r 0"
+  },
+  "keywords": [
+    "vuejs",
+    "axios",
+    "vue-axios",
+    "axios-vue"
+  ],
+  "author": "vxhly <pengchengou@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vxhly/v-axios/issues"
+  },
+  "homepage": "https://github.com/vxhly/v-axios#readme",
+  "devDependencies": {
+    "cz-conventional-changelog": "^2.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}
