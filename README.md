@@ -17,6 +17,65 @@
 npm i -S vaxios-plugin
 ```
 
+# param
+
+## $GET
+
+GET 原则上是不可以发一个带有 Body 的请求包,但是 HTTP 规范上并没有规定 GET 不可以发一个带有 Body 的请求包,在 axios 中虽然也支持发一个带有 Body 的请求包,本插件也集成了,但是如果后端不支持的话,慎用
+
+> /**
+>   * [$GET 全局的 GET 方法]
+>   *
+>   * @method $GET
+>   * @param  {String} url
+>   * @param  {Object}  payload =>Required:false
+>   * @return {Array | Object}
+>   */
+
+## $POST
+
+> /**
+>   * [$POST 全局的 POST 方法]
+>   *
+>   * @method $POST
+>   * @param  {String} url
+>   * @param  {Array | Object} payload =>Required:true
+>   * @return {Array | Object}
+>   */
+
+## $PUT
+
+> /**
+>   * [$PUT 全局的 PUT 方法]
+>   *
+>   * @method $PUT
+>   * @param  {String} url
+>   * @param  {Array | Object} payload =>Required:true
+>   * @return {Array | Object}
+>   */
+
+## $PATCH
+
+> /**
+>   * [$PATCH 全局的 PATCH 方法]
+>   *
+>   * @method $PATCH
+>   * @param  {String} url
+>   * @param  {Array | Object} payload =>Required:true
+>   * @return {Array | Object}
+>   */
+
+## $DELETE
+
+> /**
+>   * [$DELETE 全局的 DELETE 方法]
+>   *
+>   * @method $DELETE
+>   * @param  {String} url
+>   * @param  {Array | Object} payload =>Required:false
+>   * @return {Array | Object}
+>   */
+
 # Used
 
 `main.js`

@@ -1,6 +1,8 @@
 import {
   axiosDefault
-} from '../lib/axios'
+} from './lib/axios'
+import _ from 'lodash'
+
 const Vaxios = []
 
 Vaxios.install = function (Vue, options) {
@@ -29,7 +31,7 @@ Vaxios.install = function (Vue, options) {
 
   if (opt.method && opt.param) {
     $axios = opt.method
-  } else if (opt.useparam && typeof opt.param === 'object') {
+  } else if (_.size(opt.useparam) && _.isObject(opt.param)) {
     $axios = axiosDefault(opt.param.baseURL, opt.param.timeout)
   }
 
@@ -38,14 +40,21 @@ Vaxios.install = function (Vue, options) {
    *
    * @method $GET
    * @param  {String} url
+   * @param  {Object}  payload =>Required:false
    * @return {Array | Object}
    */
 
-  Vue.prototype.$GET = async (url) => {
+  Vue.prototype.$GET = async (url, payload) => {
     try {
-      const response = await $axios.get(`${url}`)
+      let response = null
 
-      console.log($axios)
+      if (_.size(payload && _.isObject(payload))) {
+        response = await $axios.get(`${url}`, {
+          params: payload
+        })
+      } else {
+        response = await $axios.get(`${url}`)
+      }
 
       if (opt.debug && opt.debug.get_debug) {
         console.info(response.data || null)
@@ -74,7 +83,7 @@ Vaxios.install = function (Vue, options) {
 
   Vue.prototype.$POST = async (url, payload) => {
     try {
-      if (Array.isArray(payload) || typeof payload === 'object') {
+      if (_.isArray(payload) || _.isObject(payload)) {
         const response = await $axios.post(`${url}`, payload)
 
         if (opt.debug && opt.debug.post_debug) console.info(response.data || null)
@@ -101,7 +110,7 @@ Vaxios.install = function (Vue, options) {
 
   Vue.prototype.$PUT = async (url, payload) => {
     try {
-      if (Array.isArray(payload) || typeof payload === 'object') {
+      if (_.isArray(payload) || _.isObject(payload)) {
         const response = await $axios.put(`${url}`, payload)
 
         if (opt.debug && opt.debug.put_debug) console.info(response.data || null)
@@ -130,7 +139,7 @@ Vaxios.install = function (Vue, options) {
 
   Vue.prototype.$PATCH = async (url, payload) => {
     try {
-      if (Array.isArray(payload) || typeof payload === 'object') {
+      if (_.isArray(payload) || _.isObject(payload)) {
         const response = await $axios.patch(`${url}`)
 
         if (opt.debug && opt.debug.patch_debug) console.info(response.data || null)
@@ -161,7 +170,7 @@ Vaxios.install = function (Vue, options) {
     try {
       let response = null
       if (payload) {
-        if (Array.isArray(payload) || typeof payload === 'object') {
+        if (_.isArray(payload) || _.isObject(payload)) {
           response = await $axios.delete(`${url}`, {
             data: payload
           })
