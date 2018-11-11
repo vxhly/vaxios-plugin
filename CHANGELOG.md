@@ -1,3 +1,13 @@
+<a name="0.1.4"></a>
+## [0.1.4](https://github.com/vxhly/vaxios-plugin/compare/v0.1.3...v0.1.4) (2018-11-11)
+
+
+### Features
+
+* **升级,添加 webpack 打包:** 新增 webpack 打包,$GET 方式支持 payload 参数,更加严格的 payload 参数验证 ([124b71f](https://github.com/vxhly/vaxios-plugin/commit/124b71f))
+
+
+
 <a name="0.1.3"></a>
 ## [0.1.3](https://github.com/vxhly/vaxios-plugin/compare/15261b6...v0.1.3) (2018-10-29)
 
