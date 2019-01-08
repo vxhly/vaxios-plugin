@@ -140,7 +140,7 @@ Vaxios.install = function (Vue, options) {
   Vue.prototype.$PATCH = async (url, payload) => {
     try {
       if (_.isArray(payload) || _.isObject(payload)) {
-        const response = await $axios.patch(`${url}`)
+        const response = await $axios.patch(`${url}`, payload)
 
         if (opt.debug && opt.debug.patch_debug) console.info(response.data || null)
 
