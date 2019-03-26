@@ -1,3 +1,12 @@
+## [0.1.6](https://github.com/vxhly/vaxios-plugin/compare/v0.1.5...v0.1.6) (2019-03-26)
+
+
+### Bug Fixes
+
+* **vaxios:** 修复部分错误 ([f6ee11e](https://github.com/vxhly/vaxios-plugin/commit/f6ee11e))
+
+
+
 ## [0.1.5](https://github.com/vxhly/vaxios-plugin/compare/v0.1.3...v0.1.5) (2019-01-08)
 
 
