@@ -39,22 +39,21 @@ Vaxios.install = function (Vue, options) {
    * [$GET 全局的 GET 方法]
    *
    * @method $GET
-   * @param  {String} url
-   * @param  {Object}  payload =>Required:false
-   * @return {Array | Object}
+   * @param {String} url RESTful URL
+   * @param {Object} payload GET 的 body 参数
    */
 
   Vue.prototype.$GET = async (url, payload) => {
     try {
       let response = null
 
-      if (_.size(payload && _.isObject(payload))) {
-        response = await $axios.get(`${url}`, {
-          params: payload
-        })
-      } else {
-        response = await $axios.get(`${url}`)
-      }
+      if (_.size(payload)) {
+        if (_.isObject(payload)) {
+          response = await $axios.get(`${url}`, {
+            params: payload
+          })
+        } else throw Error('payload must be Object')
+      } else response = await $axios.get(`${url}`)
 
       if (opt.debug && opt.debug.get_debug) {
         console.info(response.data || null)
@@ -76,9 +75,8 @@ Vaxios.install = function (Vue, options) {
    * [$POST 全局的 POST 方法]
    *
    * @method $POST
-   * @param  {String} url
-   * @param  {Array | Object} payload =>Required:true
-   * @return {Array | Object}
+   * @param {String} url RESTful URL
+   * @param {Object | Array} payload POST 的 body 参数
    */
 
   Vue.prototype.$POST = async (url, payload) => {
@@ -103,9 +101,8 @@ Vaxios.install = function (Vue, options) {
    * [$PUT 全局的 PUT 方法]
    *
    * @method $PUT
-   * @param  {String} url
-   * @param  {Array | Object} payload =>Required:true
-   * @return {Array | Object}
+   * @param {String} url RESTful URL
+   * @param {Object | Array} payload PUT 的 body 参数
    */
 
   Vue.prototype.$PUT = async (url, payload) => {
@@ -132,9 +129,8 @@ Vaxios.install = function (Vue, options) {
    * [$PATCH 全局的 PATCH 方法]
    *
    * @method $PATCH
-   * @param  {String} url
-   * @param  {Array | Object} payload =>Required:true
-   * @return {Array | Object}
+   * @param {String} url RESTful URL
+   * @param {Object | Array} payload PATCH 的 body 参数
    */
 
   Vue.prototype.$PATCH = async (url, payload) => {
@@ -161,20 +157,19 @@ Vaxios.install = function (Vue, options) {
    * [$DELETE 全局的 DELETE 方法]
    *
    * @method $DELETE
-   * @param  {String} url
-   * @param  {Array | Object} payload =>Required:false
-   * @return {Array | Object}
+   * @param {String} url RESTful URL
+   * @param {Object} payload DELETE 的 body 参数
    */
 
   Vue.prototype.$DELETE = async (url, payload) => {
     try {
       let response = null
-      if (payload) {
-        if (_.isArray(payload) || _.isObject(payload)) {
+      if (_.size(payload)) {
+        if (_.isObject(payload)) {
           response = await $axios.delete(`${url}`, {
             data: payload
           })
-        } else throw Error('payload must be Array')
+        } else throw Error('payload must be Object')
       } else response = await $axios.delete(`${url}`)
 
       if (opt.debug && opt.debug.delete_debug) console.info(response.data || null)
