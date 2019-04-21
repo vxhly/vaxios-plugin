@@ -49,8 +49,10 @@ Vaxios.install = function (Vue, options) {
 
       if (_.size(payload)) {
         if (_.isObject(payload)) {
+          let _payload = _.omitBy(payload, item => item === '' || item === undefined || item === null)
+
           response = await $axios.get(`${url}`, {
-            params: payload
+            params: _payload
           })
         } else throw Error('payload must be Object')
       } else response = await $axios.get(`${url}`)
