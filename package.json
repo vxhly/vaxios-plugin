@@ -1,6 +1,6 @@
 {
   "name": "vaxios-plugin",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "二次封装 axios,使 vue.js 中使用 axios 变得更加简单",
   "main": "src/vaxios-plugin.js",
   "scripts": {
