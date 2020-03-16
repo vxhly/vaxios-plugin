@@ -2,3 +2,6 @@
 node_modules/
 img/
 *.log
+
+package-lock.json
+yarn.lock
